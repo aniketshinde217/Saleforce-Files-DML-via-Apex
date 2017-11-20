@@ -1,0 +1,17 @@
+<apex:page controller="fileOperations">
+    <apex:outputPanel layout="block" style="padding-top:20px;text-align: center;">
+  		<apex:outputLabel value="{!logs}" for="theCheckbox" escape="false" id="displayLogId" style="color:red;font-size:30px !important"/>
+    </apex:outputPanel>
+	<apex:form >
+        <apex:outputPanel layout="block" style="padding-top:20px;text-align: center;">
+            <apex:actionStatus id="proceedId">
+                <apex:facet name="stop">
+                    <apex:commandButton value="PROCEED" action="{!performProceed}" rerender="displayLogId" style="font-size:30px !important;"/>
+                </apex:facet>
+                <apex:facet name="start">
+                    <apex:commandButton value="Processing..." style="font-size:30px !important;" disabled="true"/>
+                </apex:facet>
+            </apex:actionStatus>    
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>
